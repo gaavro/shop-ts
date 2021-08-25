@@ -28,11 +28,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const signIn = (data: User) => {
     api
-      .post("/sessions/", data)
+      .post("/login/", data)
       .then((response) => {
         localStorage.setItem("token", response.data.accessToken);
         setAuth(response.data.accessToken);
         history.push("/dashboard");
+        console.log(data);
       })
       .catch((err) => setError(true));
   };

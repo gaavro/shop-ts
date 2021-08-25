@@ -17,7 +17,7 @@ function Login() {
     email: yup.string().required("Campo obrigatório"),
     password: yup
       .string()
-      .min(6, "Mínimo de 6 dígitos")
+
       .required("Campo obrigatório"),
   });
 
@@ -64,7 +64,6 @@ function Login() {
           Enviar
         </Button>
       </form>
-      {errors && <span> Usuário ou senha incorretas! </span>}
     </Container>
   );
 }
